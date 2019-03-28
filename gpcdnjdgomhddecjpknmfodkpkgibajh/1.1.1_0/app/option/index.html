@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>图流</title>
+
+  <link rel="stylesheet" href="./assets/css/uikit.min3.0.css">
+  <link rel="stylesheet" href="./assets/css/theme.css">
+</head>
+<body>
+  <div id="app">
+      <div uk-sticky="offset: 0" class="uk-navbar-container tm-navbar-container" style="position: fixed; top: 0px; width: 1280px;">
+        <div class="uk-container uk-container-expand">
+            <nav class="uk-navbar">
+                <div class="uk-navbar-left">
+                    <img style="height:20px;" src="/src/img/icons/icon48.png" alt="">
+                    &nbsp;<p>{{title}}</p>
+                </div>
+                <div class="uk-navbar-right">
+                    <nav-link navbars="navbars" currentRoute="currentRoute"></nav-link>
+                </div>
+                <div class="uk-navbar-item uk-visible@m">
+                    <div v-if="user.uid > 0">
+                        &nbsp;&nbsp;
+                        <router-link to="/user" class="uk-button uk-button-default tm-button-default">{{user.username}}({{user.uid}})</router-link>
+                    </div>
+                    <div v-else>
+                        <router-link to="/login" class="uk-button uk-button-default tm-button-default">登录</router-link>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+  </div>
+  <script src="/dist/option.entry.js"></script>
+  <script src="/dist/mta.entry.js"></script>
+</body>
+
+</html>

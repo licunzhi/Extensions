@@ -1,0 +1,212 @@
+body {
+    width: 440px;
+    font-family: 'Microsoft Yahei';
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+.box{
+    padding: 20px 0;
+    border-bottom: 1px solid #EFEFEF;
+}
+.box1{
+    padding-top:0; 
+}
+.box .hd {
+    color: #4D4D4D;
+    font-size: 16px;
+}
+
+.box .bd {
+    padding: 0 46px;
+    position: relative;
+}
+
+.box .hd .icon {
+    margin-right: 23px;
+}
+
+.box .hd .icon img {
+    vertical-align: middle;
+    position: relative;
+}
+.box2 .hd,.box3 .hd{
+    cursor: pointer;
+}
+#app {
+    padding: 23px;
+}
+.ft{
+    text-align: center;
+    color: #A4A4A4;
+    padding-top: 20px;
+    font-size: 14px;
+}
+.ft a:hover{
+    color: #0988d8;
+}
+.box1 .jtds-btn {
+    width: 145px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 9px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.jtds-btn-all {
+    background-color: #0a99f4;
+}
+
+.jtds-btn-all:hover {
+    background-color: #0988d8;
+}
+
+.jtds-btn-visible {
+    background-color: #0eccf3;
+}
+
+.jtds-btn-visible:hover {
+    background-color: #10b9dc;
+}
+
+.jtds-btn-choose {
+    background-color: #45dd69;
+}
+
+.jtds-btn-choose:hover {
+    background-color: #3fca60;
+}
+
+.jtds-btn-browser {
+    background-color: #7c87f1;
+}
+
+.jtds-btn-browser:hover {
+    background-color: #747ee2;
+}
+.actions{
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    display: none;
+}
+.actions.actions-all{
+    display: block;
+    top: 50px;
+    left: 130px;
+}
+.actions.actions-visible{
+    display: block;
+    top: 50px;
+    left: 280px;
+}
+.actions.actions-choose{
+    display: block;
+    top: 138px;
+    left: 130px;
+}
+.actions.actions-browser{
+    display: block;
+    top: 138px;
+    left: 280px;
+}
+.actions .mask{
+    position: absolute;
+    width: 120px;
+    height: 190px;
+    background: #383737;
+    opacity: 0.8;
+    z-index: 10;
+    border-radius: 10px;
+}
+.actions ul{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    background: transparent;
+    color: #fff;
+    width: 70px;
+    padding: 5px 25px;
+}
+.actions li{
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #787878;
+    cursor: pointer;
+}
+.actions li:hover{
+    color: #0efdff;
+}
+.box2 .hd:hover,.box3 .hd:hover{
+    color: #0a99f4;
+}
+.box6 .el-row{
+    margin: 10px 0;
+    border-bottom: 1px solid #EFEFEF;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.box6 .tt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.box6 .del-wrp{
+        text-align: right;
+    margin-right: 15px;
+}
+.del-wrp .icon{
+    cursor: pointer;
+}
+/* loading */
+.wrap { width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -32px 0 0 -32px; }
+.outer { position: absolute; width: 100%; height: 100%; background: url(images/icon-spin-s.png) no-repeat; animation: spin 800ms infinite linear; }
+.inner, .inner2 { position: absolute; width: 38px; height: 38px; border-radius: 40px; overflow: hidden; left: 13px; top: 13px; }
+.inner { opacity: 1; background-color: #89abdd; animation: second-half-hide 1.6s steps(1, end) infinite; }
+.inner2 { opacity: 0; background-color: #4b86db; animation: second-half-show 1.6s steps(1, end) infinite; }
+.spiner, .filler, .masker { position: absolute; width: 50%; height: 100%; }
+.spiner { border-radius: 40px 0 0 40px; background-color: #4b86db; transform-origin: right center; animation: spin 800ms infinite linear; left: 0; top: 0; }
+.filler { border-radius: 0 40px 40px 0; background-color: #4b86db; animation: second-half-hide 800ms steps(1, end) infinite; left: 50%; top: 0; opacity: 1; }
+.masker { border-radius: 40px 0 0 40px; background-color: #89abdd; animation: second-half-show 800ms steps(1, end) infinite; left: 0; top: 0; opacity: 0; }
+
+.inner2 .spiner, .inner2 .filler { background-color: #89abdd; }
+.inner2 .masker { background-color: #4b86db; }
+
+@keyframes spin {
+  0%   { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes second-half-hide {
+  0%        { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes second-half-show {
+  0%        { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}

@@ -1,0 +1,32 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "logos/19.png",
+         "38": "logos/38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "截图大师"
+   },
+   "content_scripts": [ {
+      "js": [ "jquery.js", "contentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": "script-src 'self'  'unsafe-eval'; object-src 'self'",
+   "description": "网页截图，自定义选区截图，编辑并将它们保存为PDF，JPEG，PNG；上传，打印，浏览，复制到剪贴板以及进一步编辑",
+   "icons": {
+      "128": "logos/128.png",
+      "16": "logos/16.png",
+      "48": "logos/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx8lnjblmVUbKaDpBcFV6OtPfiuuGQazykGnbiXS3XQkPv6LZu6XY43A+QSF4LPcl6Llx2ZnE9sLgd24e/PobmvHxDLPbxmSZcXEuFhOvOpnr05gXypukrKk1c7vgzT2z54hu9J/LyvH5p5nVc61Rx/csqotVrK3ni9lYdFGMgSvhwmOEVcc1yKPiKXqoZebmd2YNi5G/EMsD2t5J6PbclmXE/nMmaW8h/0XixLLSD0hBypGoy/1sDY54W4gbqggfTDlg/bT6Yj5EYvvXWElWIVyR5AmXwhWmdBdAlSIMjA2tpyTVKvhz98HOLZSQMqRR/vCEet2shfoHghUvq8hStwIDAQAB",
+   "manifest_version": 2,
+   "name": "截图大师",
+   "permissions": [ "http://*/*", "https://*/*", "storage", "unlimitedStorage", "webRequest", "webRequestBlocking", "tabs", "management", "nativeMessaging", "activeTab", "downloads" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.1.8",
+   "web_accessible_resources": [ "jquery.js" ]
+}

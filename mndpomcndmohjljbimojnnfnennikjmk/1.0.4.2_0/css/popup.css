@@ -1,0 +1,511 @@
+body {
+  font-family: Arial, Helvetica, "微软雅黑", "黑体", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #4184f3;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+.dzt-ext-menu {
+  min-width: 300px;
+}
+
+.dzt-ext-menu>li {
+  border-bottom: 1px dotted #ccc;
+  padding: 10px;
+}
+.dzt-ext-menu .justify,form.justify{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.relative {
+  position: relative;
+}
+
+/* .dzt-ext-menu>li:hover {
+  background-color: #f7f7f7;
+} */
+
+.dzt-ext-menu>li.last-li:hover {
+  background-color: #fff;
+}
+
+.logo53 {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.url-list {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.url-list a {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+.kds_news .url-list a {
+  padding: 3px 5px;
+}
+
+.url-list a:hover {
+  background-color: #4184f3;
+  color: #fff;
+  text-decoration: none;
+}
+
+.class-time {
+  padding: 3px 5px;
+}
+
+.menu_img {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+}
+
+.menu_img.news {
+  width: 14px;
+  height: 16px;
+  margin-left: 10px;
+  margin-right: 6px;
+}
+
+.kdb-logo,
+.yy-logo {
+  margin-top: 20px;
+}
+
+.class-preview {
+  color: #36ae48;
+  font-weight: 700;
+}
+
+.news-list {
+  vertical-align: text-bottom;
+}
+
+a:focus {
+  outline: none;
+  -moz-outline: none;
+}
+
+.dzt_official_wx {
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  color: #4184f3;
+  background: url(../images/official_wx.png) no-repeat;
+  background-position: 38px center;
+  width: 48px;
+  background-color: #0EAD0E;
+  padding: 0 5px;
+  color: #ffffff;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.dzt_official_wx2 {
+  width: 58px;
+  background-position-x: 48px;
+}
+
+.dzt_official_wx .dzt_arr_b {
+  background-color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  right: 104px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  top: 158px;
+  border: 1px solid #0EAD0E;
+  z-index: 1;
+}
+
+.dzt_official_wx .dzt_arr_m {
+  width: 16px;
+  height: 6px;
+  background: #fff;
+  position: absolute;
+  top: 159px;
+  right: 102px;
+  z-index: 999;
+}
+
+.dzt_official_tdc {
+  width: 150px;
+  height: 145px;
+  position: absolute;
+  background: #fff;
+  top: -176px;
+  left: -40px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  border: 1px solid #0EAD0E;
+  z-index: 999;
+}
+
+.dzt_official_wx:hover .dzt_official_tdc {
+  display: inline-block;
+}
+
+.dzt_qr_title {
+  font-size: 12px;
+  color: #0EAD0E;
+  position: absolute;
+  width: 145px;
+  line-height: 20px;
+  left: 14px;
+  bottom: 4px;
+  z-index: 99999;
+  background: #fff;
+}
+
+#current_version {
+  float: right;
+}
+
+#current_version .ver_num {
+  color: #f35a4a;
+  font-weight: 700;
+}
+
+#current_version .update_link {
+  background-color: #f35a4a;
+  color: #fff;
+  font-weight: normal;
+  padding: 3px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#current_version .update_link:hover {
+  background-color: #ff4330;
+}
+
+li.maintainace:hover,
+li.maintainace {
+  background-color: #ff4330;
+  color: #fff;
+}
+
+.time-over b {
+  color: #0EAD0E;
+}
+
+.time-over b.houres,
+.time-over b.minutes,
+.time-over b.seconds {
+  background: #0EAD0E;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 18px;
+  display: inline-block;
+}
+
+.dzt-loading-po {
+  margin: 0px auto;
+  width: 40px;
+  text-align: center;
+  display: inline-block;
+}
+
+.dzt-loading-po .bounce1,
+.dzt-loading-po .bounce2,
+.dzt-loading-po .bounce3 {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  margin-right: 4px;
+  background-color: #0ead0e;
+  border-radius: 100%;
+  -webkit-animation: bouncedelay 0.8s infinite ease-out;
+  -moz-animation: bouncedelay 0.8s infinite ease-out;
+  -o-animation: bouncedelay 0.8s infinite ease-out;
+  animation: bouncedelay 0.8s infinite ease-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.dzt-loading-po .bounce1 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.dzt-loading-po .bounce2 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+@keyframes bouncedelay {
+
+  0%,
+  50%,
+  100% {
+      transform: scale(0.7);
+      -webkit-transform: scale(0.7);
+      opacity: 0.7;
+  }
+
+  20% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@-webkit-keyframes bouncedelay {
+
+  0%,
+  50%,
+  100% {
+      -webkit-transform: scale(0.7);
+      opacity: 0.7;
+  }
+
+  20% {
+      -webkit-transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes bouncedelay {
+
+  0%,
+  50%,
+  100% {
+      transform: scale(0.7);
+      opacity: 0.7;
+  }
+
+  20% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@-o-keyframes bouncedelay {
+
+  0%,
+  50%,
+  100% {
+      transform: scale(0.7);
+      opacity: 0.7;
+  }
+
+  20% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.url-list a.dzt_go {
+  color: #0EAD0E;
+}
+
+.url-list a.dzt_go:hover {
+  background: none;
+  color: #0EAD0E;
+  text-decoration: none;
+}
+
+.url-list .text-over {
+  width: 199px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.url-list {
+  min-width: 216px;
+}
+
+.privacypolicy {
+  display: inline-block;
+}
+
+.kds_news a {
+  color: #f35a4a;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.search-box {
+  line-height: 31px;
+  vertical-align: middle;
+}
+
+.search-box input {
+  width: 214px;
+  height: 30px;
+  border: 2px solid #4184f3;
+  outline: none;
+  padding-left: 3px;
+}
+
+.search-box .search-btn {
+  background: #4184f3;
+  width: 66px;
+  height: 30px;
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+  margin-left: -4px;
+  cursor: pointer;
+  border: none;
+  outline:none;
+}
+
+.search-box a:hover,
+.dzt-ext-menu a.level:hover {
+  text-decoration: none;
+}
+
+.search-box .icon {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+.dzt-ext-menu-box .dzt-ext-menu {
+  display: none;
+}
+.dzt-ext-menu-box .dzt-ext-menu.show{
+  display: block;
+}
+.dzt-ext-menu-box .url-list b{
+  display: block;
+  margin-bottom: 6px;
+  color: #8590a7;
+  font-size: 14px;
+}
+.dzt-ext-menu-box .url-list span.sub-tit {
+  font-size: 12px;
+  color: #999999;
+}
+.dzt-ext-menu-box .url-list .icon-row {
+  background: url(../images/icon_row.png) no-repeat;
+  height: 16px;
+  width: 8px;
+  right: 0px;
+  top: 15px;
+  position: absolute;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.clear {
+  clear: both;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+}
+.template-body-div{
+  padding: 10px;
+}
+.template-body-div:hover {
+  background: #f8f8f8;
+  border-radius: 5px;
+}
+.html-template {
+  display: none;
+}
+.kds_news {
+  display: flex;
+  align-items: center;
+}
+.kds_news .notice{
+  display: inline-block;
+}
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+}
+.badge-danger {
+  background-color: #f35a4a;
+  font-weight: normal;
+  position: absolute;
+  top: -16px;
+  font-style: normal;
+  right: 120px;
+  border-bottom-left-radius: 0;
+}
+.badge {
+  display: none;
+}
+.hot .badge{
+  display: block;
+}
+.dzt-ext-menu-body ul li {
+  float: left;
+}
+.dzt-ext-menu-body ul li:hover {
+  background: #f8f8f8;
+  border-radius: 5px;
+}
+.dzt-ext-menu-body ul li a {
+  width: 93px;
+  height: 77px;
+  text-align: center;
+  padding-top: 16px;
+}
+.dzt-ext-menu-body ul li a:hover {
+  text-decoration: none;
+}
+.dzt-ext-menu-body ul li a p {
+  line-height: 10px;
+  color: #8590a7;
+  font-size: 14px;
+}
+.level2 .xds .url-list span a {
+  padding: 0 6px 0 0;
+  color: #999999;
+}
+.level2 .xds .url-list span a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}

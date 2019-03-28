@@ -1,0 +1,29 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "dzt_ext_logo48x48.png",
+      "default_popup": "popup.html",
+      "default_title": "店侦探&看店宝-淘宝卖家数据分析工具"
+   },
+   "content_scripts": [ {
+      "css": [ "css/style.css" ],
+      "js": [ "js/jquery-3.3.1.min.js", "js/echarts3.min.js", "js/md5.js", "js/contentscript.js" ],
+      "matches": [ "*://*.jiyoujia.com/*", "*://*.taobao.com/*", "*://*.tmall.com/*", "*://*.tmall.hk/*", "*://*.alitrip.com/*", "*://*.yao.95095.com/*", "*://*.fliggy.com/*", "*://*.liangxinyao.com/*", "*://*.kandianbao.com/*", "*://*.kandianbao.cn/*", "*://*.xuedianshang.com/*", "*://*.kandianshang.com/*", "*://*.kandianshang.net/*", "*://*.kandianshang.cn/*", "*://*.dianzhentan.com/*", "*://*.dianshangyi.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com/hm.js; object-src 'self'",
+   "description": "淘宝卖家数据分析工具，店铺经营数据和宝贝销售分析，店铺流量来源、活动推广等等。",
+   "homepage_url": "http://www.dianzhentan.com/",
+   "icons": {
+      "128": "dzt_ext_logo128x128.png",
+      "48": "dzt_ext_logo48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr8QiSL1oaToyT0IBRnUbMeIrDvjSLSQRvzNGG00vigynr+tibnHiFLg+piyc8vNB+dWDPcyYsUyeC0oCHNtqyKB56NuEXuwCmdTUYJFOijlVXSolxsvshTjNLTAE7m6b0WcF2+jp/8IZMQTIvZPM+AD8nv4oOHDPgh6vj15Q967b0pF97L2xjELapKah50HmAGR5AFZSe2vW4nutOzXiQEiS7jSm0w3Nw3aV7zGqWoejx+Nj54+rJ3oSArbOrR10dyha8VQDtWsxzQIMREMExa2MMWPbx61Ju3FoIW5gCbqzlv+slf2bP/5EuhUDbznVTu8ZoCb2T/PzlnWG733yiwIDAQAB",
+   "manifest_version": 2,
+   "name": "店侦探&看店宝-淘宝卖家数据分析工具",
+   "permissions": [ "cookies", "activeTab", "contextMenus", "tabs", "storage", "webRequest", "management", "webRequestBlocking", "*://*/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.4.2"
+}

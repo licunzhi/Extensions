@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>截图大师</title>
+    <link rel="stylesheet" href="js/lib/element-ui.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div v-show="appView=='tools'">
+            <div class="box box1" v-if="!appStatus.isNativeSupported">
+                <div class="hd"><span class="icon"><img src="images/icon-jt.png" style="top:-2px;"></span>截取</div>
+                <div class="bd">
+                    <el-row :gutter="20">
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-all" @click="capture(1)">整个页面</div></div></el-col><!-- <p>整个页面</p><p>Ctrl+Shift+Y</p>    -->
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-visible" @click="capture(0)">可见部分</div></div></el-col>
+                    </el-row>
+                    <el-row :gutter="20">
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-choose" @click="capture(2)">选定区域</div></div></el-col>
+                    </el-row>
+                </div>
+            </div>
+            <div class="box box1" v-else>
+                <div class="hd"><span class="icon"><img src="images/icon-jt.png" style="top:-2px;"></span>截取</div>
+                <div class="bd">
+                    <el-row :gutter="20">
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-all" actions="actions-all" mode="1">整个页面</div></div></el-col><!-- <p>整个页面</p><p> Ctrl+Shift+Y</p> -->
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-visible" actions="actions-visible" mode="0">可见部分</div></div></el-col>
+                    </el-row>
+                    <el-row :gutter="20">
+                        <el-col :span="12"><div class=""><div class="jtds-btn jtds-btn-choose" actions="actions-choose" mode="2">选定区域</div></div></el-col>
+                        <el-col :span="12" ><div class=""><div class="jtds-btn jtds-btn-browser" actions="actions-browser" mode="3">浏览器窗口</div></div></el-col>
+                    </el-row>
+                    <div class="actions" :class="actionClass">
+                        <div class="mask"></div>
+                        <ul>
+                            <li @click="captureExt(21)">编辑</li>
+                            <!-- <li @click="copy()">复制</li> -->
+                            <li @click="captureExt(22)">打印</li>
+                            <li @click="captureExt(24)">存为JPG</li>
+                            <li @click="captureExt(23)">存为PNG</li>
+                            <li style="border:none;" @click="captureExt(25)">存为PDF</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="box box2" v-if="appStatus.isNativeSupported">
+                <div class="hd" @click="startClt()"><span class="icon"><img src="images/icon-file.png" style="top:-2px;"></span>最近的文件</div>
+                <div class="bd"></div>
+            </div>
+             <div class="box box4">
+                <div class="hd" @click="changeView('history')" style="cursor: pointer;"><span class="icon"><img src="images/icon-history.png"></span>历史记录</div>
+                <div class="bd"></div>
+            </div>
+            <div class="box box3">
+                <div class="hd" @click="openOption()"><span class="icon"><img src="images/icon-set.png"></span>选项</div>
+                <div class="bd"></div>
+            </div>
+            <div class="ft">
+                <span v-if="appStatus.isNativeSupported">高级版使用中</span>
+                <span v-else><a  style="font-size: 16px;color: #0a99f4;cursor: pointer;" href="http://www.jietu365.com/" target="_blank">免费升级为高级版</a></span>
+            </div>
+        </div>
+        <div v-show="appView=='history'">
+            <div class="box box5" style="padding:0 0 10px 0;">
+                <el-row>
+                    <el-col :span="18"><div><span class="icon"><img src="images/icon-history.png" style="position: relative;top: 4px;"></span><span style="font-size: 20px;color: #333;margin-left:15px; ">历史记录</span></div></el-col>
+                    <el-col :span="6"><div style="position: relative;top:5px; cursor: pointer;text-align: right;" @click="changeView('tools')"><span class="icon"><img src="images/icon-return.png" style="position: relative;top:2px;"></span><span style="font-size: 14px;color: #333;margin-left:5px; ">返回上一级</span></div></el-col>
+                </el-row>
+                <el-row style="margin-top:25px;">
+                    <el-col :span="6"><div><input type="radio" style="position: relative;top: 2px;cursor: pointer;" :checked='autoSynchro' @click="autoSynchroChange"><span style="font-size: 14px;">自动同步</span></div></el-col>
+                    <el-col :span="12"><div @click="synchro()" style="cursor: pointer;"><span class="icon"><img src="images/icon-refresh.png" style="position: relative;top: 3px;"></span><span style="font-size: 14px;margin-left:5px;" class="txt-refresh">从云端同步</span></div></el-col>
+                    <el-col :span="6"><div style="text-align: right;cursor: pointer;" @click="delAll()" ><span class="icon"><img src="images/icon-rubbish.png" style="position: relative;top: 3px;"></span><span style="font-size: 14px;margin-left:5px; ">清空</span></div></el-col>
+                </el-row>
+            </div>
+             <div style="padding-top: 5px;">
+                <div style="height: 300px;line-height: 300px;font-size: 20px;color: #bbb9b9;text-align: center;position: relative;" v-if="!jtdsHistory">
+                    <div class="wrap">
+                        <div class="outer"></div>
+                        <div class="inner">
+                            <div class="spiner"></div>
+                            <div class="filler"></div>
+                            <div class="masker"></div>
+                        </div>
+                        <div class="inner2">
+                            <div class="spiner"></div>
+                            <div class="filler"></div>
+                            <div class="masker"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box6" style="font-size: 14px;height: 300px;overflow-y: auto;" v-else-if="jtdsHistory.length" @scroll="historyScroll">
+                    <el-row v-for="history in jtdsHistory">
+                        <el-col :span="6">{{history.shotTimeStr}}</el-col>
+                        <el-col :span="15">
+                            <div class="tt">{{history.title}}</div>
+                            <div class="tt">{{history.url}}</div>
+                        </el-col>
+                        <el-col :span="3">
+                            <div class="del-wrp" ><span class="icon"  @click="delHistory(history.id)"><img src="images/icon-delet.png" style="position: relative;top: 4px;"></span></div>
+                        </el-col>
+                    </el-row>
+                </div>
+                <div style="height: 300px;line-height: 300px;font-size: 20px;color: #bbb9b9;text-align: center;" v-else>
+                    暂无截图记录
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/element-ui.js"></script>
+    <script src="js/lib/fsUtils.js"></script>
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

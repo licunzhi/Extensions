@@ -1,0 +1,1 @@
+"use strict";var View={showResponseStatus:function(s,i){var t=DomUtils.findDom(tabID,"responseStatus");t.css("visibility","visible"),t.children(".time").text(i+" ms")}};

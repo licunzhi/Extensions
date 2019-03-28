@@ -1,0 +1,20 @@
+{
+   "author": "inu1255",
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "description": "基于 Octotree 的[码云](http://gitee.com)文件树插件",
+   "homepage_url": "https://gitee.com/inu1255/GitCodeTree",
+   "icons": {
+      "128": "icons/icon128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo2xfUQ4eipeRB0NyQjxya2QOoA3zn4SEZQtli0oX9jOLKYkZK5UFys5sV90OZLscWwaIen9/DiCGLIPRs2jlbDuwcK6Fiicw7nsq2wATwofvErr3hxvWQjavIugNt/tFtRGW4FIaCaXrsQiJ2U7QIsEx5N7NdexJZyef3l//SWWvOfpmtHn1av3V3UJU1awznWQIM45PmgNPz6TgopK3zqr86prRvLgS7K0qWpSHXbsN2tHdybFzQnyNvIoPEXW6QaFSO+9bAqxBRLo7n29iW1bnwyL0NUhcIoPT35svjjAXdzVTZ+o0sbjGFF4e2xARrMrNGRM/smim1aezDXw4EQIDAQAB",
+   "manifest_version": 2,
+   "name": "GitCodeTree",
+   "optional_permissions": [ "\u003Call_urls>" ],
+   "permissions": [ "https://github.com/*", "http://git.oschina.net/*", "https://git.oschina.net/*", "http://gitee.com/*", "https://gitee.com/*", "https://bitbucket.org/*", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.4.7",
+   "web_accessible_resources": [ "*.woff2" ]
+}

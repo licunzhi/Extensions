@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>截图大师</title>
+    <link rel="stylesheet" href="js/lib/element-ui.css">
+    <style type="text/css">
+    body {}
+
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            width: 750px
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            width: 970px
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .box {
+        padding: 15px 0 0;
+        border-bottom: 1px solid #EFEFEF;
+    }
+
+    .box .hd {
+        color: #4D4D4D;
+        font-size: 16px;
+    }
+
+    .box .bd {}
+
+    #divImgResult {
+        width: 100%;
+        overflow-y: scroll;
+        zoom: 1;
+        margin-bottom: 21px;
+        background-color: #B3B3B3;
+        border: 1px solid transparent;
+        border-radius: 0;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+        height: 513px;
+    }
+
+    #divImgResult img {
+        padding: 10px;
+        width: 100%;
+        margin: auto;
+        display: block;
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+
+    .el-header {
+        padding-right: 0;
+    }
+
+    .aside-ct {
+        background: #F2F2F2;
+        padding: 0 20px 10px;
+        margin-top: 20px;
+        text-align: left;
+        border-radius: 3px;
+    }
+
+    .box li {
+        width: 180px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+        border-radius: 20px;
+        margin: 15px 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .save-png {
+        background-color: #0a99f4;
+    }
+
+    .save-png:hover {
+        background-color: #0988d8;
+    }
+
+    .save-jpg {
+        background-color: #0eccf3;
+    }
+
+    .save-jpg:hover {
+        background-color: #10b9dc;
+    }
+
+    .save-pdf {
+        background-color: #45dd69;
+    }
+
+    .save-pdf:hover {
+        background-color: #3fca60;
+    }
+
+    .print,
+    .note {
+        background-color: #B3B3B3;
+    }
+
+    .box4 a {
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+        color: #479FEB;
+        cursor: pointer;
+    }
+
+    .box4 a:hover {
+        color: #3b86c7;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container" v-cloak>
+        <el-container>
+            <el-header height="130px">
+                <div style="font-size: 32px;font-weight: 500;border-bottom: 1px solid #F2F2F2;padding:50px 0 10px;"><img src="logos/128.png" style="width: 64px;vertical-align: middle;"><span style="margin-left: 20px;">保存截图</span></div>
+            </el-header>
+            <el-container>
+                <el-main>
+                    <div>
+                        <div id="divImgResult">
+                            <img id="imgResult">
+                        </div>
+                    </div>
+                </el-main>
+                <el-aside width="250px">
+                    <div class="aside-ct">
+                        <div class="box box1">
+                            <div class="hd">保存图片</div>
+                            <ul class="bd">
+                                <li class="save-png" @click="downloadToFile('png')">存为PNG</li>
+                                <li class="save-jpg" @click="downloadToFile('jpg')">存为JPG</li>
+                                <li class="save-pdf" @click="downloadToFile('pdf')">存为PDF</li>
+                            </ul>
+                        </div>
+                        <div class="box box2">
+                            <div class="hd">复制图片</div>
+                            <div class="bd">
+                                <div style="color: #BBBBBB;height: 24px;line-height: 24px;font-size: 14px;">在左侧图片上单击右键即可复制</div>
+                            </div>
+                        </div>
+                        <div class="box box3">
+                            <div class="hd">高级版功能</div>
+                            <ul class="bd">
+                                <li class="print">打印</li>
+                                <li class="note">批注</li>
+                            </ul>
+                        </div>
+                        <div class="box box4">
+                            <div class="bd">
+                                <a target="_blank" href="http://www.jietu365.com/">下载高级版</a>
+                                <a target="_blank" @click="openOption()">更多选项...</a>
+                            </div>
+                        </div>
+                    </div>
+                </el-aside>
+            </el-container>
+    </div>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/element-ui.js"></script>
+    <script src="js/lib/fsUtils.js"></script>
+    <script src="jquery.js"></script>
+    <script src="js/lib/captured.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+   "background": {
+      "scripts": [ "lib/jquery-1.10.2.min.js", "background.js", "utils/Common.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "image/24x24.png",
+         "38": "image/72x72.png"
+      },
+      "default_title": "apizza - 极客专属的api管理工具"
+   },
+   "content_scripts": [ {
+      "css": [ "css/styles.css" ],
+      "js": [ "lib/jquery-1.10.2.min.js", "lib/clipboard.min.js", "lib/bootbox.js", "utils/Json.js", "utils/Common.js", "utils/AceUtils.js", "utils/AForm.js", "utils/Request.js", "utils/Response.js", "utils/String.js", "utils/String.js", "utils/View.js", "script.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "流程测试正式版上线。支持发送大文件。apizza.net 网站发送请求插件。restful api client，体验类似 postman，免费文档功能，mock功能等等。",
+   "icons": {
+      "128": "image/114x114.png",
+      "16": "image/24x24.png",
+      "48": "image/72x72.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAugGtOwm6zThBdOFWfhW629UBUj8Xl2YOraxTQ+2AZwFTUJuR0nDDRFzxJLc28Q0gQNkRsUQYTJG0HG0KEpsOzBQ+msZTEekCecuTu3MM8lbXbomX9S58edlVBTDSwlQ7VEOuaQmmDKTbLlnniVGS7/mZ5iC6lTsBazgOhpHxHDmfmt7ajDX9aCiVpJnehcYWepLjjnVHXrfcAO53+JF20+ZJmJQieHRtEV1WDZphEYGybDnTCmTTtT6iVqLWmuc3+bT8QQgQSB7jBnTc78HQLW9F1prcIuX0NEsFIqEK9mnJ1/oQS76z2W1zww7TL14uNRrgAKBaxMtrWQY1cDDo4QIDAQAB",
+   "manifest_version": 2,
+   "name": "apizza-SQ pro",
+   "permissions": [ "activeTab", "tabs", "webNavigation", "storage", "unlimitedStorage", "webRequest", "webRequestBlocking", "cookies", "clipboardWrite", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.0"
+}

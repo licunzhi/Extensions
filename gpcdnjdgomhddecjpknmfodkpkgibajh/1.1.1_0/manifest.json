@@ -1,0 +1,28 @@
+{
+   "background": {
+      "scripts": [ "dist/background.entry.js" ]
+   },
+   "browser_action": {
+      "default_icon": "src/img/icons/icon128.png",
+      "default_title": "图流"
+   },
+   "content_scripts": [ {
+      "js": [ "src/js/jquery.min.js", "dist/inject.entry.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://pingjs.qq.com https://www.zhihu.com; object-src 'self' https://www.zhihu.com;",
+   "description": "图流,简单看图,愉悦心情.图片瀑布流展示,photo in masonry,SimpSee,草榴看图插件,草榴看图助手",
+   "homepage_url": "http://photo-masonry.aacc.in/",
+   "icons": {
+      "128": "src/img/icons/icon128.png",
+      "16": "src/img/icons/icon16.png",
+      "48": "src/img/icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl/FdD7a01K0JgD6aWnxXBetRpGM/CnGthnfj7C0I+3AsNlGDQnnmwpLLGnk1hxEm0vTRFCvuNtsEArC9CxDi7mDNRvQk8aFbHSp6RJWAh+3iKSs8oLTAXN0eBWSvpTWUXV/tQ3Bkv4f8bjqbLccADFEU7enOuV1HBjLx1uWS06r8vZATjGP238/mbGsUFAKIfc/lLKSoAL9++Tv/WC4fc6C5u6vi/wM2vzcCmfF8HJiorPdaNIBZKIU9beZNi7hnCfsUfsnEWiVsI9ODNEvf9rARTxptVV1WcrXG34+X2dLILe0csGXFb2uzbNrfUP/g11Y3N+l5ZC6P6m4DdTuscQIDAQAB",
+   "manifest_version": 2,
+   "name": "图流-看图助手",
+   "options_page": "app/option/index.html",
+   "permissions": [ "storage", "webRequest", "notifications", "*://*/*", "activeTab", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.1"
+}

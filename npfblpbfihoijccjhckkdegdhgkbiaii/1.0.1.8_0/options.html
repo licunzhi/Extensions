@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>截图大师</title>
+    <link rel="stylesheet" href="js/lib/element-ui.css">
+    <style type="text/css">
+    body {}
+
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            width: 750px
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            width: 970px
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    .container{
+        margin-top:50px; 
+        background-color: #F2F2F2;
+        font-size: 16px;
+        padding: 50px 0;
+        border-radius:5px; 
+    }
+    .el-container{
+        width: 470px;
+        margin: 0 auto;
+    }
+    .client .el-container{
+         width: 580px;
+    }
+    .el-header{
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+    }
+    .el-main{
+        padding-top:0; 
+    }
+    .box {
+        padding:15px 0 0;
+        border-bottom: 1px solid #EFEFEF;
+    }
+    .box1{
+        padding-top:0; 
+    }
+    .client .box1 .el-input{
+        width: 100%;
+    }
+    .box1 .el-input{
+        width: 315px;
+    }
+    .box2 li{
+        margin: 10px 0;
+    }
+    .box3 button{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .btn-apply{
+        background-color:#0ECCF3; 
+        border-color:#0ECCF3;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container" v-cloak> 
+        <el-container>
+            <el-header>文件设置</el-header>
+            <el-main>
+                <div class="box box1">
+                    <div><span style="line-height: 40px;">默认输出地址：</span><span><el-input v-model="foldPref" :disabled="true"></el-input></span></div>
+                </div>
+                <div class="box box2">
+                    <div>自定义保存过程：</div>
+                    <ul>
+                        <li><el-checkbox v-model="chkDoNotShowSaveAsDialog">不显示"另存为对话框"</el-checkbox></li>
+                        <li><el-checkbox v-model="chkOpenFolder">保存后再其文件夹中显示下载的文件</el-checkbox></li>
+                        <li><el-checkbox v-model="chkCloseTab">保存后关闭选项卡</el-checkbox></li>
+                    </ul>
+                </div>
+                <div class="box box3">
+                    <el-row :gutter="30">
+                        <el-col :span="12"><div class=""><el-button type="primary" class="btn-apply" @click="applySet()">应用</el-button></div></el-col>
+                        <el-col :span="12"><div class=""><el-button type="primary" @click="saveAndClose()">保存并关闭</el-button></div></el-col>
+                    </el-row>
+                </div>
+            </el-main>
+        </el-container>
+    </div>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/element-ui.js"></script>
+    <script src="js/lib/fsUtils.js"></script>
+    <script src="jquery.js"></script>
+    <script src="js/lib/options.js"></script>
+</body>
+</html>
